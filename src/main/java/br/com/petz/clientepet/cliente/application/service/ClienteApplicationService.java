@@ -1,5 +1,6 @@
 package br.com.petz.clientepet.cliente.application.service;
 
+import br.com.petz.clientepet.cliente.application.api.ClienteListResponse;
 import br.com.petz.clientepet.cliente.application.api.ClienteResponse;
 import br.com.petz.clientepet.cliente.application.api.ClienteResquest;
 import br.com.petz.clientepet.cliente.application.repository.ClienteRepository;
@@ -7,6 +8,8 @@ import br.com.petz.clientepet.cliente.domain.Cliente;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @Log4j2
@@ -21,5 +24,12 @@ public class ClienteApplicationService implements ClienteService {
         Cliente cliente =clienteRepository.salva(new Cliente(clienteResquest));
         log.info("[finaliza]ClienteApplicationService - criaCliente");
         return ClienteResponse.builder().idCliente(cliente.getIdCliente()).build();
+    }
+
+    @Override
+    public List<ClienteListResponse> buscaTodosOsClientes() {
+        log.info("[inicia]ClienteApplicationService - buscaTodosOsClientes");
+        log.info("[finaliza]ClienteApplicationService - buscaTodosOsClientes");
+        return List.of();
     }
 }
