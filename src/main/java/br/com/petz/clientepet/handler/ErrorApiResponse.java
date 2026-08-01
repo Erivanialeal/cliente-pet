@@ -1,4 +1,4 @@
-package dev.wakandaacademy.produdoro.handler;
+package br.com.petz.clientepet.handler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -6,6 +6,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter

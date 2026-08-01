@@ -1,12 +1,11 @@
-package dev.wakandaacademy.produdoro.handler;
-
-import java.util.Optional;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+package br.com.petz.clientepet.handler;
 
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import java.util.Optional;
 
 @Getter
 @Log4j2
