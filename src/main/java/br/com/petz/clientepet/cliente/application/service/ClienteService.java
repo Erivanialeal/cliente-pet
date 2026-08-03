@@ -1,9 +1,7 @@
 package br.com.petz.clientepet.cliente.application.service;
 
-import br.com.petz.clientepet.cliente.application.api.ClienteDetalhadoResponse;
-import br.com.petz.clientepet.cliente.application.api.ClienteListResponse;
-import br.com.petz.clientepet.cliente.application.api.ClienteResponse;
-import br.com.petz.clientepet.cliente.application.api.ClienteResquest;
+import br.com.petz.clientepet.cliente.application.api.*;
+import jakarta.validation.Valid;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,4 +11,5 @@ public interface ClienteService {
     List<ClienteListResponse> buscaTodosOsClientes();
     ClienteDetalhadoResponse buscaClienteAtravesDoId(UUID idCliente);
     void deletaClienteAtravesDoId(UUID idCliente);
+    void patchAlteraCliente(UUID idCliente,ClienteAlteracaoResquest clienteAlteracaoResquest);
 }

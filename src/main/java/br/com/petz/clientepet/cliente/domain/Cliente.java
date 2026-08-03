@@ -1,5 +1,6 @@
 package br.com.petz.clientepet.cliente.domain;
 
+import br.com.petz.clientepet.cliente.application.api.ClienteAlteracaoResquest;
 import br.com.petz.clientepet.cliente.application.api.ClienteResquest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -54,5 +55,15 @@ public class Cliente {
         this.aceitaTermos = clienteResquest.getAceitaTermos();
         this.dataHoraDoCadastro = LocalDateTime.now();
 
+    }
+
+    public void altera(ClienteAlteracaoResquest clienteResquest) {
+        this.nomeCompleto = clienteResquest.getNomeCompleto();
+        this.celular = clienteResquest.getCelular();
+        this.telefone = clienteResquest.getTelefone();
+        this.sexo = clienteResquest.getSexo();
+        this.dataNascimento = clienteResquest.getDataNascimento();
+        this.aceitaTermos = clienteResquest.getAceitaTermos();
+        this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
     }
 }

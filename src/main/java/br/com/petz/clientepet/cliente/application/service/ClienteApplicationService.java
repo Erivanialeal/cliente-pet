@@ -1,9 +1,6 @@
 package br.com.petz.clientepet.cliente.application.service;
 
-import br.com.petz.clientepet.cliente.application.api.ClienteDetalhadoResponse;
-import br.com.petz.clientepet.cliente.application.api.ClienteListResponse;
-import br.com.petz.clientepet.cliente.application.api.ClienteResponse;
-import br.com.petz.clientepet.cliente.application.api.ClienteResquest;
+import br.com.petz.clientepet.cliente.application.api.*;
 import br.com.petz.clientepet.cliente.application.repository.ClienteRepository;
 import br.com.petz.clientepet.cliente.domain.Cliente;
 import lombok.RequiredArgsConstructor;
@@ -51,6 +48,16 @@ public class ClienteApplicationService implements ClienteService {
         clienteRepository.deletaCliente(cliente);
         log.info("[finaliza]ClienteApplicationService - deletaClienteAtravesDoId");
 
+
+    }
+
+    @Override
+    public void patchAlteraCliente(UUID idCliente, ClienteAlteracaoResquest clienteAlteracaoResquest) {
+        log.info("[inicia]ClienteApplicationService - patchAlteraCliente");
+        Cliente cliente = clienteRepository.buscaClientesAtravesId(idCliente);
+        cliente.altera(clienteAlteracaoResquest);
+        clienteRepository.salva(cliente);
+        log.info("[finaliza]ClienteApplicationService - patchAlteraCliente");
 
     }
 }
