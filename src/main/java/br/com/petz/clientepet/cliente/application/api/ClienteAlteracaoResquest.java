@@ -11,6 +11,7 @@ import java.time.LocalDate;
 
 @Value
 public class ClienteAlteracaoResquest {
+    @NotBlank
     private String nomeCompleto;
     @NotBlank
     private String celular;
