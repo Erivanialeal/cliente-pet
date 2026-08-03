@@ -5,18 +5,17 @@ import br.com.petz.clientepet.cliente.domain.Cliente;
 import br.com.petz.clientepet.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.antlr.v4.runtime.misc.LogManager;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Repository
 @Log4j2
 @RequiredArgsConstructor
 public class ClienteInfraRepository implements ClienteRepository {
+
 
     private final ClienteSpringDataJPARepository clienteSpringDataJPARepository;
 
@@ -44,4 +43,14 @@ public class ClienteInfraRepository implements ClienteRepository {
         log.info("[finaliza]ClienteInfraRepository - buscaClientesAtravesId");
         return cliente;
     }
+
+    @Override
+    public void deletaCliente(Cliente cliente){
+        log.info("[inicia]ClienteInfraRepository - deletaCliente");
+        clienteSpringDataJPARepository.delete(cliente);
+        log.info("[finaliza]ClienteInfraRepository - deletaCliente");
+
+
+    }
+
 }
