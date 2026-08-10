@@ -1,6 +1,7 @@
 package br.com.petz.clientepet.pet.domain;
 
 
+import br.com.petz.clientepet.pet.application.api.PetAlteracaoResquest;
 import br.com.petz.clientepet.pet.application.api.PetResquest;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
@@ -59,6 +60,21 @@ public class Pet {
         this.rga = petResquest.getRga();
         this.peso = petResquest.getPeso();
         this.dataHoraDoCadastro = LocalDateTime.now();
+
+    }
+
+    public void altera(PetAlteracaoResquest petResquest) {
+        this.nomePet = petResquest.getNomePet();
+        this.porte = petResquest.getPorte();
+        this.tipoPet = petResquest.getTipo();
+        this.microchip = petResquest.getMicrochip();
+        this.raca = petResquest.getRaca();
+        this.sexo = petResquest.getSexo();
+        this.pelagemCor = petResquest.getPelagemCor();
+        this.dataNascimento = petResquest.getDataNascimento();
+        this.rga = petResquest.getRga();
+        this.peso = petResquest.getPeso();
+        this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
 
     }
 }
